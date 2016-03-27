@@ -13,12 +13,14 @@ fis.functions = (function() {
     $('.btn-area').on('click', function(e){
       e.preventDefault();
       animationClass(this);
+      $('body').addClass('is-active')
       $(this).closest('.area').addClass('is-show')
     });
   }
 
   function hideContent() {
     $('.btn-close').on('click', function(){
+      $('body').removeClass('is-active')
       animationClass(this);
       $(this).closest('.area').removeClass('is-show');
     });

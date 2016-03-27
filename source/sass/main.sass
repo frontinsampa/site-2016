@@ -1,5 +1,9 @@
 $grid-3: 33.33333%
+$screen-xs: 401px
+$screen-sm: 768px
 
+$colorDark: #2c2c2b
+$colorPrimary: #F6266C
 
 html
   box-sizing: border-box
@@ -78,11 +82,11 @@ a
   height: 50vh
 
   &:nth-child(odd)
-    background: #2c2c2b
+    background: $colorDark
 
   &:nth-child(even)
     background: #fff
-    color: #2c2c2b
+    color: $colorDark
 
   &:before
     content: ''
@@ -150,7 +154,7 @@ a
 .area-content
   text-align: center
   font-family: 'Inconsolata'
-  color: #F6266C
+  color: $colorPrimary
   position: relative
   z-index: 3
 
@@ -201,12 +205,31 @@ a
   align-items: center
   flex-direction: column
   font-size: .7em
-  color: lighten(#2c2c2b, 50%)
+  color: lighten($colorDark, 50%)
   padding: 10px
-  background: #2c2c2b
+  background: $colorDark
 
   *
     width: 100%
 
   p:last-child
     margin: 0
+
+
+@media screen and (max-width: 401px)
+
+  .area
+    height: 25vh
+    width: 100%
+
+@media screen and (min-width: $screen-xs) and (max-width: $screen-sm)
+
+  .area
+    width: 50%
+
+    &:nth-child(odd)
+      background: transparent
+
+    &:nth-child(1),
+    &:nth-child(4)
+      background: $colorDark

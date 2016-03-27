@@ -166,7 +166,7 @@ a
   width: $grid-3
   top: 0
   left: 0
-  background: #fff
+  background: #ccc
   visibility: hidden
   opacity: 0
   transform-origin: 0 0
@@ -225,7 +225,11 @@ a
 @media screen and (min-width: $screen-xs) and (max-width: $screen-sm)
 
   .area
+    height: 33.33333vh
     width: 50%
+
+    .content-group
+      width: 50%
 
     &:nth-child(odd)
       background: transparent
@@ -233,3 +237,38 @@ a
     &:nth-child(1),
     &:nth-child(4)
       background: $colorDark
+
+    // origin of position to animate
+    &:nth-child(2) .content-group,
+    &:nth-child(4) .content-group,
+    &:nth-child(6) .content-group
+      left: auto
+      right: 0
+
+    &:nth-child(3) .content-group
+      right: auto
+      left: 0
+
+    &:nth-child(3) .content-group,
+    &:nth-child(4) .content-group
+      top: $grid-3
+
+    &:nth-child(5) .content-group
+      left: 0
+
+    &.is-show
+
+      &:nth-child(2) .content-group,
+      &:nth-child(4) .content-group,
+      &:nth-child(6) .content-group
+        left: auto
+
+      &:nth-child(3) .content-group
+        top: 50vh
+
+      .content-group
+        width: 100%
+
+      &:nth-child(3) .content-group,
+      &:nth-child(4) .content-group
+        top: 0

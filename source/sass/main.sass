@@ -2,8 +2,12 @@ $grid-3: 33.33333%
 $screen-xs: 401px
 $screen-sm: 768px
 
-$colorDark: #2c2c2b
-$colorPrimary: #F6266C
+$color-dark: #2c2c2b
+$color-code: #F6266C
+$color-default: #df0a15
+$color-light: #fff
+
+$font-code: 'Inconsolata'
 
 html
   box-sizing: border-box
@@ -52,10 +56,7 @@ table
   border-spacing: 0
 
 body
-  font-family: Tahoma, arial, verdana
-
-p
-  margin-bottom: 10px
+  font-family: 'Inconsolata', arial, verdana
 
 a
   color: inherit
@@ -67,6 +68,24 @@ body.is-active
 
   video
     display: none
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p
+  margin-bottom: 20px
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  color: $color-default
 
 .grid
   display: flex
@@ -88,11 +107,11 @@ body.is-active
   height: 50vh
 
   &:nth-child(odd)
-    background: $colorDark
+    background: $color-dark
 
   &:nth-child(even)
     background: #fff
-    color: $colorDark
+    color: $color-dark
 
   &:before
     content: ''
@@ -160,7 +179,7 @@ body.is-active
 .area-content
   text-align: center
   font-family: 'Inconsolata'
-  color: $colorPrimary
+  color: $color-code
   position: relative
   z-index: 3
 
@@ -203,17 +222,37 @@ body.is-active
   z-index: 4
 
 .content
-  height: 80vh
+  width: 100%
+  height: 100vh
   overflow-y: auto
-  padding: 10px
+  padding: 10px 50px 10px 10px
+  color: $color-dark
+
+  .btn-close
+    position: absolute
+    right: 10px
+    top: 10px
+
+.content-side
+  margin-bottom: 30px
+
+  &:nth-child(odd)
+    padding-left: 0
+    padding-right: 50vw
+    text-align: right
+
+  &:nth-child(even)
+    padding-left: 50vw
+    padding-right: 0
+    text-align: left
 
 .extra
   align-items: center
   flex-direction: column
   font-size: .7em
-  color: lighten($colorDark, 50%)
+  color: lighten($color-dark, 50%)
   padding: 10px
-  background: $colorDark
+  background: $color-dark
 
   *
     width: 100%
@@ -222,6 +261,9 @@ body.is-active
     margin: 0
 
 
+/**
+ * Coloca esses medias dentro das classes Deivid, pelo amor de deus, nunca te pedi nada ;_;
+ */
 @media screen and (max-width: 401px)
 
   // .area
@@ -261,7 +303,7 @@ body.is-active
     &:nth-child(1),
     &:nth-child(4),
     &:nth-child(5)
-      background: $colorDark
+      background: $color-dark
 
     // // origin of position to animate
     // &:nth-child(2) .content-group,

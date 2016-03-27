@@ -4,17 +4,31 @@ fis.functions = (function() {
 
   'use strict';
 
-  var trigger = document.querySelector('.area');
-
   function init() {
-    toggleClass();
+    showContent();
+    hideContent();
   }
 
-  function toggleClass() {
-    trigger.addEventListener('click', function(e) {
+  function showContent() {
+    $('.btn-area').on('click', function(e){
       e.preventDefault();
-      this.classList.toggle('active');
+      animationClass(this);
+      $(this).closest('.area').addClass('is-show')
     });
+  }
+
+  function hideContent() {
+    $('.btn-close').on('click', function(){
+      animationClass(this);
+      $(this).closest('.area').removeClass('is-show');
+    });
+  }
+
+  function animationClass(el){
+    $(el).closest('.area').addClass('is-animation')
+    setTimeout(function(){
+      $(el).closest('.area').removeClass('is-animation');
+    },300)
   }
 
   return {

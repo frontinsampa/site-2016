@@ -1,5 +1,7 @@
 @import 'variables.sass'
 @import 'animation.sass'
+@import 'layout.sass'
+@import 'text.sass'
 
 html
   box-sizing: border-box
@@ -48,7 +50,7 @@ table
   border-spacing: 0
 
 body
-  font-family: 'Inconsolata', arial, verdana
+  font-family: $font-text
 
 a
   color: inherit
@@ -100,6 +102,7 @@ h6
 
   &:nth-child(odd)
     background: $color-dark
+    color: $color-light
 
   &:nth-child(even)
     background: #fff
@@ -170,8 +173,6 @@ h6
 
 .area-content
   text-align: center
-  font-family: 'Inconsolata'
-  color: $color-code
   position: relative
   z-index: 3
 

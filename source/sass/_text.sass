@@ -1,0 +1,12 @@
+.text-title
+  font: 2em/1.2em $font-title
+  text-transform: uppercase
+
+  @at-root & + .text-title
+    @extend .text-title
+    font-size: 1.45em
+
+    @at-root & + .text-title
+      font: .9em/1.2em $font-text
+      text-transform: none
+      margin: 10px 0

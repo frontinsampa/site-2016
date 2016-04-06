@@ -1,12 +1,19 @@
 .text-title
   font: 2em/1.2em $font-title
   text-transform: uppercase
+  width: 100%
 
   @at-root & + .text-title
     @extend .text-title
     font-size: 1.45em
+    opacity: .6
 
     @at-root & + .text-title
       font: .9em/1.2em $font-text
       text-transform: none
       margin: 10px 0
+      opacity: .4
+
+.text-align
+  &_center
+    text-align: center

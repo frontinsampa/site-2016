@@ -14,14 +14,14 @@
   </head>
 
   <body>
-    <div class="display: none;">
+    <div style="display: none;">
       <!-- inject:svg -->
       <!-- endinject -->
     </div>
 
     <main role="main">
-      <div class="grid area-group">
-        <section id="event" class="grid area">
+      <div class="layout-grid area-group">
+        <section id="event" class="layout-grid area">
           <a href="" class="btn-area"></a>
 
           <div class="area-content">
@@ -30,7 +30,7 @@
             <p class="text-title layout-margin_remove-bottom">02 de Julho de 2016</p>
           </div>
 
-          <div class="grid content-group">
+          <div class="layout-grid content-group">
             <div class="content">
               <div class="content-side">
                 <button class="btn-close">Fechar</button>
@@ -157,15 +157,15 @@
           </div>
         </section>
 
-        <section class="grid area">
+        <section id="ticket" class="layout-grid area">
           <a href="" class="btn-area"></a>
           <div class="area-content">
-            <p class="text-title layout-margin_remove-bottom">Inscreva-se agora</p>
-            <p class="text-title layout-margin_remove-bottom">por R$ 199,99</p>
+            <p class="text-title layout-margin_remove-bottom">Inscreva-se</p>
+            <p class="text-title layout-margin_remove-bottom">agora por R$ 199,99</p>
           </div>
 
-          <div class="grid content-group">
-            <div class="grid content">
+          <div class="layout-grid content-group">
+            <div class="layout-grid content">
               <button class="btn-close">Fechar</button>
               <h1>Titulo 2</h1>
 
@@ -182,14 +182,14 @@
           </div>
         </section>
 
-        <section id="speakers" class="grid area">
+        <section id="speakers" class="layout-grid area">
           <a href="" class="btn-area"></a>
           <div class="area-content">
             <p class="text-title layout-margin_remove-bottom">Palestrantes</p>
           </div>
 
-          <div class="grid content-group">
-            <div class="grid content">
+          <div class="layout-grid content-group">
+            <div class="layout-grid content">
               <button class="btn-close">Fechar</button>
               <h1>Palestrantes</h1>
 
@@ -206,14 +206,14 @@
           </div>
         </section>
 
-        <section id="schedule" class="grid area">
+        <section id="schedule" class="layout-grid area">
           <a href="" class="btn-area"></a>
           <div class="area-content">
             <p class="text-title layout-margin_remove-bottom">Programação</p>
           </div>
 
-          <div class="grid content-group">
-            <div class="grid content">
+          <div class="layout-grid content-group">
+            <div class="layout-grid content">
               <button class="btn-close">Fechar</button>
               <h1>Programação</h1>
 
@@ -230,14 +230,14 @@
           </div>
         </section>
 
-        <section id="place" class="grid area">
+        <section id="place" class="layout-grid area">
           <a href="" class="btn-area"></a>
           <div class="area-content">
             <p class="text-title layout-margin_remove-bottom">Local</p>
           </div>
 
-          <div class="grid content-group">
-            <div class="grid content">
+          <div class="layout-grid content-group">
+            <div class="layout-grid content">
               <button class="btn-close">Fechar</button>
               <h1>Local</h1>
 
@@ -254,14 +254,14 @@
           </div>
         </section>
 
-        <section id="call" class="grid area">
+        <section id="call" class="layout-grid area">
           <a href="" class="btn-area"></a>
           <div class="area-content">
             <p class="text-title layout-margin_remove-bottom">Call 4 Proposals</p>
           </div>
 
-          <div class="grid content-group">
-            <div class="grid content">
+          <div class="layout-grid content-group">
+            <div class="layout-grid content">
               <button class="btn-close">Fechar</button>
               <h1>call 4 proposals</h1>
 
@@ -279,58 +279,80 @@
         </section>
       </div>
 
-      <div>
-        <section id="sponsors">
-          <h2 class="text-title">Patrocinadores</h2>
-          <h3 class="text-title">Bronze</h3>
+      <div class="layout-grid_row social-group pre-footer">
+        <section id="sponsors" class="layout-grid_row social-group">
+          <h2 class="text-title text-align_center">Patrocinadores</h2>
+          <h3 class="text-title text-align_center">Bronze</h3>
 
-          <ul>
-            <li>
-              <a href="https://www.alura.com.br" title="Alura" aria-label="Ir para o site do patrocinador Alura" target="_blank"></a>
+          <ul class="layout-grid_row layout-align_center layout-size_eighty">
+            <li class="social-chain">
+              <a class="social-chain" href="https://www.alura.com.br" title="Alura" aria-label="Ir para o site do patrocinador Alura" target="_blank">
+                <img src="/assets/images/sponsors/patrocinador-front-in-sampa-alura.jpg" width="100" alt="Alura" aria-label="Logotipo do patrocinador Alura" />
+              </a>
             </li>
-            <li>
-              <a href="https://gravento.com.br" title="Graveto" aria-label="Ir para o site do patrocinador Graveto" target="_blank"></a>
+            <li class="social-chain">
+              <a class="social-chain" href="https://gravento.com.br" title="Graveto" aria-label="Ir para o site do patrocinador Graveto" target="_blank">
+                <img src="/assets/images/sponsors/patrocinador-front-in-sampa-graveto.svg" width="250" alt="Graveto" aria-label="Logotipo do patrocinador Graveto" />
+              </a>
             </li>
           </ul>
         </section>
 
-        <section id="support">
-          <h2 class="text-title">Apoio</h2>
+        <section id="support" class="layout-grid_row social-group">
+          <h2 class="text-title text-align_center">Apoio</h2>
 
-          <ul>
-            <li>
-              <a href="" title="Eventick" aria-label="Ir para o site do apoiador Eventick" target="_blank"></a>
+          <ul class="layout-grid_row layout-align_center layout-size_eighty">
+            <li class="social-chain">
+              <a class="social-chain" href="" title="Eventick" aria-label="Ir para o site do apoiador Eventick" target="_blank">
+                <img src="/assets/images/support/apoiador-front-in-sampa-eventick.jpg" width="120" alt="Eventick" aria-label="Logotipo do apoiador Eventick" />
+              </a>
             </li>
-            <li>
-              <a href="" title="Meetup CSS" aria-label="Ir para o site do apoiador Meetup CSS" target="_blank"></a>
+            <li class="social-chain">
+              <a class="social-chain" href="" title="Meetup CSS" aria-label="Ir para o site do apoiador Meetup CSS" target="_blank">
+                <img src="/assets/images/support/apoiador-front-in-sampa-meetupcss.jpg" width="50" alt="Meetup CSS" aria-label="Logotipo do apoiador Meetup CSS" />
+              </a>
             </li>
-            <li>
-              <a href="" title="EuCompraria!" aria-label="Ir para o site do apoiador EuCompraria!" target="_blank"></a>
+            <li class="social-chain">
+              <a class="social-chain" href="" title="EuCompraria!" aria-label="Ir para o site do apoiador EuCompraria!" target="_blank">
+                <img src="/assets/images/support/apoiador-front-in-sampa-eucompraria.jpg" width="120" alt="EuCompraria!" aria-label="Logotipo do apoiador EuCompraria!" />
+              </a>
             </li>
-            <li>
-              <a href="" title="CSS Conf" aria-label="Ir para o site do apoiador CSS Conf" target="_blank"></a>
+            <li class="social-chain">
+              <a class="social-chain" href="" title="CSS Conf" aria-label="Ir para o site do apoiador CSS Conf" target="_blank">
+                <img src="/assets/images/support/apoiador-front-in-sampa-cssconf.jpg" width="120" alt="CSS Conf Brasil" aria-label="Logotipo do apoiador CSS Conf Brasil" />
+              </a>
             </li>
-            <li>
-              <a href="" title="Casa do Código" aria-label="Ir para o site do apoiador Casa do Código" target="_blank"></a>
+            <li class="social-chain">
+              <a class="social-chain" href="" title="Casa do Código" aria-label="Ir para o site do apoiador Casa do Código" target="_blank">
+                <img src="/assets/images/support/apoiador-front-in-sampa-casa-do-codigo.png" width="220" alt="Casa do Código" aria-label="Logotipo do apoiador Casa do Código" />
+              </a>
             </li>
-            <li>
-              <a href="" title="BrazilJs Conf" aria-label="Ir para o site do apoiador BrazilJs Conf" target="_blank"></a>
+            <li class="social-chain">
+              <a class="social-chain" href="" title="BrazilJs Conf" aria-label="Ir para o site do apoiador BrazilJs Conf" target="_blank">
+                <img src="/assets/images/support/apoiador-front-in-sampa-braziljs-conf.svg" width="95" alt="BrazilJs Conf" aria-label="Logotipo do apoiador BrazilJs Conf" />
+              </a>
             </li>
-            <li>
-              <a href="" title="Mergo" aria-label="Ir para o site do apoiador Mergo" target="_blank"></a>
+            <li class="social-chain">
+              <a class="social-chain" href="" title="Mergo" aria-label="Ir para o site do apoiador Mergo" target="_blank">
+                <img src="/assets/images/support/apoiador-front-in-sampa-mergo.jpg" width="70" alt="Mergo" aria-label="Logotipo do apoiador Mergo" />
+              </a>
             </li>
-            <li>
-              <a href="" title="Stickers Dev" aria-label="Ir para o site do apoiador Stickers Dev" target="_blank"></a>
+            <li class="social-chain">
+              <a class="social-chain" href="" title="Stickers Dev" aria-label="Ir para o site do apoiador Stickers Dev" target="_blank">
+                <img src="/assets/images/support/apoiador-front-in-sampa-stickers-dev.jpg" width="120" alt="Stickers Dev" aria-label="Logotipo do apoiador Stickers Dev" />
+              </a>
             </li>
-            <li>
-              <a href="" title="Front Ladies ABC" aria-label="Ir para o site do apoiador Front Ladies ABC" target="_blank"></a>
+            <li class="social-chain">
+              <a class="social-chain" href="" title="Front Ladies ABC" aria-label="Ir para o site do apoiador Front Ladies ABC" target="_blank">
+                <img src="/assets/images/support/apoiador-front-in-sampa-front-ladies-abc.jpg" width="150" alt="Front Ladies ABC" aria-label="Logotipo do apoiador Front Ladies ABC" />
+              </a>
             </li>
           </ul>
         </section>
       </div>
     </main>
 
-    <footer class="extra grid" role="contentinfo">
+    <footer class="layout-grid_row text-align_center extra" role="contentinfo">
       <p>© copyright 2012 - 2016 | Todos os direitos reservados</p>
 
       <p>

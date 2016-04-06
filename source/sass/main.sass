@@ -82,11 +82,6 @@ h5,
 h6
   color: $color-default
 
-.grid
-  display: flex
-  flex-wrap: wrap
-  align-items: center
-
 .area-group
   width: 100%
   font-size: 20px
@@ -116,7 +111,6 @@ h6
   &:nth-child(odd)
     background: $color-dark
     color: $color-light
-
 
   &:nth-child(even)
     color: $color-dark
@@ -173,9 +167,6 @@ h6
   transform-origin: 0 0
   transition: all ease-out .5s
 
-  &:nth-child(odd)
-    justify-content: flex-end
-
   @include medium
     height: 33.33333vh
     width: 50%
@@ -193,7 +184,14 @@ h6
   height: 100vh
   overflow-y: auto
   padding: 10px 50px 10px 10px
-  color: $color-dark
+
+  @at-root .area:nth-child(odd) &
+    background: $color-dark
+    color: $color-light
+
+  @at-root .area:nth-child(even) &
+    background: $color-light
+    color: $color-dark
 
   .btn-close
     position: absolute
@@ -226,3 +224,25 @@ h6
 
   p:last-child
     margin: 0
+
+.social-chain
+  &:not(a)
+    margin: 10px
+
+    @include medium
+      width: 100%
+      text-align: center
+
+  @at-root a.social-chain
+    transition: opacity .2s ease
+
+    &:hover,
+    &:focus
+      opacity: .8
+
+#ticket .text-title + .text-title
+  font-size: 1.16em
+  color: $color-default
+
+.social-group
+  padding: 30px 10px

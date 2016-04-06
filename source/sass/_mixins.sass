@@ -1,0 +1,9 @@
+@mixin media-query($media-query)
+
+  @if $media-query == medium
+    @media only screen and (max-width: $screen-sm)
+      @content
+
+@mixin medium
+  @include media-query(medium)
+    @content

@@ -60,6 +60,22 @@
       left: 0
 
 .content-group
+  background-size: 100%
+  background-attachment: fixed
+  position: absolute
+  height: 50vh
+  width: $grid-3
+  top: 0
+  left: 0
+  background: #ccc
+  visibility: hidden
+  opacity: 0
+  transform-origin: 0 0
+  transition: all ease-out .5s
+
+  @include medium
+    height: 33.33333vh
+    width: 50%
 
   .is-show &
     height: 100vh

@@ -4,6 +4,14 @@
     @media only screen and (max-width: $screen-sm)
       @content
 
+  @if $media-query == small
+    @media only screen and (max-width: $screen-xs)
+      @content
+
 @mixin medium
   @include media-query(medium)
+    @content
+
+@mixin small
+  @include media-query(small)
     @content

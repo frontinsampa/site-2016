@@ -4,74 +4,58 @@
   &.is-animation
     position: initial
 
-  &:nth-child(3) .content-group,
-  &:nth-child(6) .content-group
-    left: auto
-    right: 0
+  &:nth-child(1) .content-group
+    transform-origin: 0 0
+
+  &:nth-child(2) .content-group
+    transform-origin: 50% 0
+
+  &:nth-child(3) .content-group
+    transform-origin: 100% 0
 
   &:nth-child(4) .content-group
-    top: auto
-    bottom: 0
+    transform-origin: 0 100%
 
-  &:nth-child(2) .content-group,
   &:nth-child(5) .content-group
-    left: $grid-3
+    transform-origin: 50% 100%
 
-  &:nth-child(5) .content-group,
   &:nth-child(6) .content-group
-    top: auto
-    bottom: 0
-
-  &.is-show
-    &:nth-child(2) .content-group,
-    &:nth-child(5) .content-group
-      left: 0
-
-    @include medium
-      &:nth-child(2) .content-group
-        left: auto
-        right: 0
-
-      &:nth-child(3) .content-group,
-      &:nth-child(4) .content-group
-        top: 0
-
-      &:nth-child(3) .content-group
-        right: 0
-
-      &:nth-child(5) .content-group
-        left: 0
+    transform-origin: 100% 100%
 
   @include medium
+
     &:nth-child(2) .content-group
-      left: auto
-      right: 0
+      transform-origin: 100% 0
 
     &:nth-child(3) .content-group
-      top: 33.33333vh
-      left: 0
+      transform-origin: 0 100%
 
     &:nth-child(4) .content-group
-      top: 33.33333vh
-      right: 0
-      left: auto
+      transform-origin: 100% 100%
 
     &:nth-child(5) .content-group
-      left: 0
+      transform-origin: 0 100%
+
+  &.is-show
+    .content-group
+      transform: scale(1)
+      height: 100%
 
 .content-group
   background-size: 100%
   background-attachment: fixed
-  position: absolute
-  height: 50vh
-  width: $grid-3
+  height: 150%
   top: 0
   left: 0
-  background: #ccc
   visibility: hidden
   opacity: 0
   transform-origin: 0 0
-  transition: all ease-out .5s
+  transition: all ease-in-out .5s
+  background: #fff
+  position: fixed
+  width: 100%
+  z-index: 10
+  transform: scale(.33333)
 
   @include medium
     height: 33.33333vh

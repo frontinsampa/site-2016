@@ -98,7 +98,6 @@ video
 .area-group
   width: 100%
   font-size: 20px
-  color: #fff
   height: 100vh
 
 .area
@@ -114,16 +113,16 @@ video
     height: 33.33333vh
     width: 50%
 
-    &:nth-child(odd):nth-child(3)
-      background: transparent
+    // &:nth-child(odd):nth-child(3)
+    //   background: transparent
 
-      @include small
-        background: $color-dark
+      // @include small
+      //   background: $color-dark
 
-    &:nth-child(1),
-    &:nth-child(4),
-    &:nth-child(5)
-      background: $color-dark
+    // &:nth-child(1),
+    // &:nth-child(4),
+    // &:nth-child(5)
+    //   background: $color-dark
 
   @include small
     height: 33.33333vh
@@ -137,20 +136,6 @@ video
     &:nth-child(6) .content-group
       transform-origin: 100% 100%
 
-  &:nth-child(odd)
-    background: $color-dark
-    color: $color-light
-
-    @include small
-      background: $color-dark
-
-  &:nth-child(even)
-    background: $color-light
-    color: $color-dark
-
-    @include small
-      background: $color-light
-
   &:before
     content: ''
     position: absolute
@@ -161,18 +146,33 @@ video
     /**
      * teste para um overlay.
      */
-    background: url(http://s3.amazonaws.com/agile_designer_uploads/images/145/large.jpg?1374128699) no-repeat
+    background-image: url(http://s3.amazonaws.com/agile_designer_uploads/images/145/large.jpg?1374128699)
+    background-repeat: no-repeat
     background-size: cover
     opacity: 0
+    z-index: 3
+
+  &:after
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    opacity: 1
     z-index: 2
 
-  &:hover,
-  &:focus
-    &:before
-      opacity: .2
+  &:nth-child(odd)
+    color: $color-light
 
-    .area-video
-      opacity: 1
+    &:after
+      background-color: $color-dark
+
+  &:nth-child(even)
+    color: $color-dark
+
+    &:after
+      background-color: $color-light
 
 .area-video
   position: absolute

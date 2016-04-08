@@ -82,6 +82,15 @@ h5,
 h6
   color: $color-default
 
+video
+  position: absolute
+  z-index: 1
+
+.area-container
+  width: 100%auto
+  position: relative
+  overflow: hidden
+
 .area-group
   width: 100%
   font-size: 20px
@@ -95,6 +104,7 @@ h6
   overflow: hidden
   width: $grid-3
   height: 50vh
+  z-index: 2
 
   @include medium
     height: 33.33333vh
@@ -113,6 +123,7 @@ h6
     color: $color-light
 
   &:nth-child(even)
+    background: $color-light
     color: $color-dark
 
   &:before

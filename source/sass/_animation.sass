@@ -1,8 +1,17 @@
-.area
+@keyframes transparency
+  to
+    opacity: .5
 
-  &.is-show,
-  &.is-animation
+.area
+  background: $color-dark
+  color: $color-light
+
+  &.is-show
     position: initial
+
+  &.is-animation
+    animation: transparency 1s linear .1s
+    animation-fill-mode: forwards
 
   &:nth-child(3) .content-group,
   &:nth-child(6) .content-group
@@ -60,7 +69,6 @@
       left: 0
 
 .content-group
-
   .is-show &
     height: 100vh
     opacity: 1
@@ -73,9 +81,7 @@
       width: 100%
       height: 100%
 
-  .is-animation &
-    z-index: 10
-    visibility: visible
-    transition: all ease .4s
-
-
+  // .is-animation &
+  //   z-index: 10
+  //   visibility: visible
+  //   transition: all ease .4s

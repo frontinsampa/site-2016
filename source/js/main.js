@@ -13,9 +13,9 @@ fis.functions = (function() {
   function animation() {
     $('.is-normal .area').on({
       mouseover: function() {
-        $('.is-normal .area').removeClass('is-animation');
+        $(this).removeClass('is-animation');
 
-        var nth  = [1, 2, 3, 4, 5, 6];
+        var nth = [1, 2, 3, 4, 5, 6];
 
         nth.sort(function(a) {
             return Math.random() - 0.5;
@@ -28,7 +28,8 @@ fis.functions = (function() {
 
           setTimeout(function() {
             $('.is-normal .area:nth-child('+i+')').addClass('is-animation');
-          }, 100 * i);
+            console.log(100 * i)
+          }, 150 * i);
         }.bind(this));
       },
       mouseout: function() {

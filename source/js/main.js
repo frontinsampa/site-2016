@@ -22,7 +22,7 @@ fis.functions = (function() {
         });
 
         nth.filter(function(i) {
-          if($(this).index()+1 == i) {
+          if($(this).index() + 1 == i) {
             return;
           }
 

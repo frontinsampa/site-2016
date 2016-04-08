@@ -143,13 +143,9 @@ video
     height: 100%
     top: 0
     left: 0
-    /**
-     * teste para um overlay.
-     */
-    background-image: url(http://s3.amazonaws.com/agile_designer_uploads/images/145/large.jpg?1374128699)
-    background-repeat: no-repeat
+    background: url(http://s3.amazonaws.com/agile_designer_uploads/images/145/large.jpg?1374128699) no-repeat
     background-size: cover
-    opacity: 0
+    opacity: .2
     z-index: 3
 
   &:after
@@ -265,9 +261,12 @@ video
     &:focus
       opacity: .8
 
-#ticket .text-title + .text-title
-  font-size: 1.16em
-  color: $color-default
+#ticket
+  .text-title + .text-title
+    font-size: 1.16em
+
+  &:not(.is-animation) .text-title + .text-title
+    color: $color-default
 
 .social-group
   padding: 30px 10px

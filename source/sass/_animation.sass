@@ -1,6 +1,6 @@
 @keyframes transparency
   to
-    opacity: .2
+    opacity: .1
 
 @keyframes color
   to
@@ -9,18 +9,24 @@
 .area
   color: $color-light
 
+  &:before
+    transition: opacity .5s ease
+
   &.is-show
     position: initial
 
   &.is-animation
     &:nth-child(odd),
     &:nth-child(even)
-      animation: color 1s linear .1s
+      animation: color .5s linear .1s
       animation-fill-mode: forwards
 
     &:after
-      animation: transparency 1s linear .1s
+      animation: transparency .8s linear .1s
       animation-fill-mode: forwards
+
+    &:before
+      opacity: 0
 
   &:nth-child(1) .content-group
     transform-origin: 0 0

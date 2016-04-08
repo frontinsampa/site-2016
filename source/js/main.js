@@ -7,26 +7,14 @@ fis.functions = (function() {
   function init() {
     showContent();
     hideContent();
-    animationContent();
+    animation();
   }
 
-  function add(nth, time) {
-    setTimeout(function() {
-        $('.area:nth-child('+nth+')').addClass('is-animation');
-      }, time);
-  }
-
-  function remove(nth, time) {
-    setTimeout(function() {
-        $('.area:nth-child('+nth+')').removeClass('is-animation');
-      }, time);
-  }
-
-  function animationContent(el) {
-
-
+  function animation() {
     $('.area').on({
       mouseover: function() {
+        $('.area').removeClass('is-animation');
+
         var nth  = [1, 2, 3, 4, 5, 6];
 
         nth.sort(function(a) {

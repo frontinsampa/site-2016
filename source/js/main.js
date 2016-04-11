@@ -13,28 +13,42 @@ fis.functions = (function() {
   function animation() {
     $('.is-normal .area').on({
       mouseover: function() {
-        $(this).removeClass('is-animation');
-        var elem = $(this)
-        var area = $(this).index() + 1;
-        var nth  = [1, 2, 3, 4, 5, 6];
-
-        nth.splice(nth.indexOf(area), 1);
-
-        nth.sort(function(a) {
-            return Math.random() - 0.5;
-        });
-
-        nth.filter(function(i) {
-          setTimeout(function() {
-            $('.is-normal .area:nth-child('+i+')').addClass('is-animation');
-            elem.removeClass('is-animation');
-          }, 100 * i);
-        }.bind(this));
+        startAnimation($(this));
+      },
+      focusin: function() {
+        startAnimation($(this));
+      },
+      focusout: function(){
+        stopAnimation();
       },
       mouseout: function() {
-        $('.area').removeClass('is-animation');
+        stopAnimation();
       }
     });
+  }
+
+  function startAnimation(i){
+    $(i).removeClass('is-animation');
+      var elem = i
+      var area = $(i).index() + 1;
+      var nth  = [1, 2, 3, 4, 5, 6];
+
+      nth.splice(nth.indexOf(area), 1);
+
+      nth.sort(function(a) {
+          return Math.random() - 0.5;
+      });
+
+      nth.filter(function(i) {
+        setTimeout(function() {
+          $('.is-normal .area:nth-child('+i+')').addClass('is-animation');
+          elem.removeClass('is-animation');
+        }, 100 * i);
+      }.bind(i));
+  }
+
+  function stopAnimation(){
+     $('.area').removeClass('is-animation');
   }
 
   function showContent() {

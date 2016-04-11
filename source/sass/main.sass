@@ -124,8 +124,16 @@ video
     .text-title + .text-title
       font-size: 1.16em
 
-    &:not(.is-animation) .text-title + .text-title
-      color: $color-default
+      &:not(.is-animation) .text-title + .text-title
+        color: $color-default
+
+  @at-root #place
+    .text-title + .text-title
+      font-size: 1.48em
+
+      + .text-title
+        font-size: .8em
+        text-transform: uppercase
 
   @include medium
     height: 33.33333vh

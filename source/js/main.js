@@ -32,7 +32,7 @@ fis.functions = (function() {
         }.bind(this));
       },
       mouseout: function() {
-        $('.is-normal .area').removeClass('is-animation');
+        $('.area').removeClass('is-animation');
       }
     });
   }

@@ -56,14 +56,15 @@ body
   -moz-overflow-scrolling: touch
   -ms-overflow-scrolling: touch
   overflow-scrolling: touch
+  overflow: hidden
 
 a
   color: inherit
   text-decoration: none
   font-weight: bold
 
-body.is-active
-  overflow: hidden
+body.is-normal
+  overflow: auto
 
 
 h1,
@@ -285,15 +286,26 @@ video
 
 .area-icon
   position: absolute
-  transform: scale(1) translate(150%, 50%)
+  transform: scale(1) translate(-50%, 50%)
   transform-origin: 0 0
   transition: all ease-in-out .5s
-  left: 0
+  left: 50%
   top: 0
   z-index: 4
   width: 120px
   height: 90px
 
+  @include small
+    // width: 50px
+    // height: 90px
+    // transform-origin: 0 0
+    // transform: translate(120%, 10%)
+
+  @include medium
+    transform translate(85%, 10%)
+
+  @include small
+    transform translate(85%, 10%)
 
   svg path
     fill: $color-light
@@ -301,9 +313,12 @@ video
   .is-show &
     transform: scale(3) translate(-25%, 75%)
     transition: all ease .4s
-    transform-origin: -250% 40%
-    opacity: .15
+    // transform-origin: -250% 40%
+    transform-origin: 50% 50%
+    opacity: .1
 
+    // @include medium
+    //   transform-origin: -50% 40%
 
 .btn-area
   position: absolute
@@ -330,7 +345,7 @@ video
     color: mix(#000,$color-light, 15%)
 
   @include small
-    padding: 20px
+    padding: 40px 20px
 
   @at-root .area:nth-child(odd) &
     // background: $color-dark
@@ -436,6 +451,11 @@ video
   color: $color-dark
   padding: 10px 25px
   display: inline-block
+  margin-bottom: 10px
+
+  @include small
+    display: block
+    text-align: center
 
 .is-show .text-hide
   display: none

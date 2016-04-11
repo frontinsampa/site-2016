@@ -309,7 +309,7 @@ video
     transform: scale(3) translate(-25%, 75%)
     transition: all ease .4s
     transform-origin: 50% 50%
-    opacity: .1
+    opacity: .05
 
 .btn-area
   position: absolute
@@ -336,6 +336,11 @@ video
   p
     color: mix(#000,$color-light, 15%)
     font-size: 1rem
+
+  .note
+    color: red
+    text-align: center
+    width: 100%
 
   @include small
     padding: 40px 20px
@@ -486,7 +491,7 @@ video
   width: calc(100% - 250px)
 
 .speaker-name
-  color: $color-default
+  color: #000
   font-family: Oswald
   font-size: 28px
   font-weight: 400
@@ -495,6 +500,3 @@ video
 
 .speaker-link
   display: inline-block
-
-  svg
-    fill: $color-light

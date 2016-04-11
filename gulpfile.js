@@ -44,7 +44,7 @@ gulp.task('javascript', function() {
 
 gulp.task('svg', function() {
   return gulp.src('./build/index.html')
-    .pipe(inject(gulp.src('./source/images/*.svg')
+    .pipe(inject(gulp.src('./source/images/**/*.svg')
       .pipe(svg(function(file) {
         return {
           plugins: [{

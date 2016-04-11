@@ -14,7 +14,7 @@ fis.functions = (function() {
     $('.is-normal .area').on({
       mouseover: function() {
         $(this).removeClass('is-animation');
-
+        var elem = $(this)
         var area = $(this).index() + 1;
         var nth  = [1, 2, 3, 4, 5, 6];
 
@@ -27,6 +27,7 @@ fis.functions = (function() {
         nth.filter(function(i) {
           setTimeout(function() {
             $('.is-normal .area:nth-child('+i+')').addClass('is-animation');
+            elem.removeClass('is-animation');
           }, 100 * i);
         }.bind(this));
       },

@@ -1,18 +1,47 @@
 .text-title
-  font: 2em/1.2em $font-title
+  font: 2.55rem/1.2em $font-title
   text-transform: uppercase
+  color: inherit
+  display: block
   width: 100%
 
-  @at-root & + .text-title
+  @at-root & + .text-title, .text-title_medium
     @extend .text-title
-    font-size: 1.45em
+    font-size: 1.45rem
     opacity: .6
 
-    @at-root & + .text-title
-      font: .9em/1.2em $font-text
+    @at-root & + .text-title, .text-title_small
+      font: .9rem/1.2rem $font-text
       text-transform: none
       margin: 10px 0
       opacity: .4
+
+  @at-root .content
+    .text-title
+      border-bottom: 4px solid $color-default
+      margin-bottom: 10px
+      display: inline-block
+      width: auto
+
+      + .text-title
+        border: 0
+        display: block
+
+        + p
+          margin-top: 20px
+
+    @at-root & .text-title_medium, & .text-title_small
+      border: 0
+      display: block
+
+  @at-root .speaker-list
+    .text-title
+      font-size: 1.8rem
+      border: 0
+      margin: 0
+
+      + .text-title
+        font-size: 1.1rem
 
 .text-align
   &_center

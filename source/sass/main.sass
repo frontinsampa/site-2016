@@ -89,6 +89,16 @@ video
   z-index: 1
   width: 100%
 
+.title
+  color: $color-default
+  font-size: 36px
+  font-family: Oswald
+  text-transform: uppercase
+
+.subtitle
+  color: $color-light
+  font-size: 24px
+
 /**
  * AREAS
  */
@@ -266,14 +276,34 @@ video
   position: relative
   z-index: 3
 
+  .is-show &
+    position: fixed
+    top: 20px
+    left: 0
+    right: 0
+    bottom: 0
+
 .area-icon
   position: absolute
-  transform: translate(-50%, -100%)
-  left: 50%
-  top: -10px
+  transform: scale(1) translate(150%, 50%)
+  transform-origin: 0 0
+  transition: all ease-in-out .5s
+  left: 0
+  top: 0
+  z-index: 4
+  width: 120px
+  height: 90px
+
 
   svg path
     fill: $color-light
+
+  .is-show &
+    transform: scale(3) translate(-25%, 75%)
+    transition: all ease .4s
+    transform-origin: -250% 40%
+    opacity: .15
+
 
 .btn-area
   position: absolute
@@ -294,14 +324,20 @@ video
   width: 100%
   height: 100%
   overflow-y: auto
-  padding: 10px 50px 10px 10px
+  padding: 20px 80px
+
+  p
+    color: mix(#000,$color-light, 15%)
+
+  @include small
+    padding: 20px
 
   @at-root .area:nth-child(odd) &
-    background: $color-dark
+    // background: $color-dark
     color: $color-light
 
   @at-root .area:nth-child(even) &
-    background: $color-light
+    // background: $color-light
     color: $color-dark
 
   .btn-close
@@ -322,7 +358,7 @@ video
   opacity: 0
   transform-origin: 0 0
   transition: all ease-in-out .5s
-  background: #fff
+  // background: #fff
   position: fixed
   width: 100%
   z-index: 10
@@ -394,3 +430,12 @@ video
 
 .social-group
   padding: 30px 10px
+
+.btn-light
+  background: $color-light
+  color: $color-dark
+  padding: 10px 25px
+  display: inline-block
+
+.is-show .text-hide
+  display: none

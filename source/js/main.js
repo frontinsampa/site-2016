@@ -38,7 +38,7 @@ fis.functions = (function() {
   }
 
   function showContent() {
-    $('.btn-area').on('click', function(e){
+    $('.btn-area:not(.link-direct)').on('click', function(e){
       e.preventDefault();
       $('body').removeClass('is-normal');
       $(this).closest('.area').addClass('is-show');

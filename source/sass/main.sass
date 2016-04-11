@@ -459,3 +459,43 @@ video
 
 .is-show .text-hide
   display: none
+
+.speaker-list
+  width: 100%
+
+  li
+    overflow: hidden
+    margin-bottom: 30px
+
+    &:nth-child(even)
+      .speaker-photo
+        float: right
+
+      .speaker-details
+        padding-right: 50px
+
+
+.speaker-photo
+  border-radius: 50%
+  float: left
+  margin-right: 50px
+  height: 200px
+  margin-bottom: 10px
+  width: 200px
+
+.speaker-details
+  width: calc(100% - 250px)
+
+.speaker-name
+  color: $color-default
+  font-family: Oswald
+  font-size: 28px
+  font-weight: 400
+  display: inline-block
+  margin-right: 10px
+
+.speaker-link
+  display: inline-block
+
+  svg
+    fill: $color-light

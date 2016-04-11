@@ -15,21 +15,19 @@ fis.functions = (function() {
       mouseover: function() {
         $(this).removeClass('is-animation');
 
-        var nth = [1, 2, 3, 4, 5, 6];
+        var area = $(this).index() + 1;
+        var nth  = [1, 2, 3, 4, 5, 6];
+
+        nth.splice(nth.indexOf(area), 1);
 
         nth.sort(function(a) {
             return Math.random() - 0.5;
         });
 
         nth.filter(function(i) {
-          if($(this).index() + 1 == i) {
-            return;
-          }
-
           setTimeout(function() {
             $('.is-normal .area:nth-child('+i+')').addClass('is-animation');
-            console.log(100 * i)
-          }, 150 * i);
+          }, 100 * i);
         }.bind(this));
       },
       mouseout: function() {

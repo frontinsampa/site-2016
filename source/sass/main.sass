@@ -126,6 +126,9 @@ video
       + .text-title
         font-size: .95em
 
+        @include small
+          font-size: .8em
+
     &:before
       background: url(/assets/images/area-front-in-sampa.jpg) no-repeat
 
@@ -149,7 +152,7 @@ video
     width: 50%
 
   @include small
-    height: 33.33333vh
+    height: 150px
     width: 100%
 
     &:nth-child(1) .content-group,
@@ -349,12 +352,16 @@ video
 .btn-close
   position: absolute
   cursor: pointer
-  right: -5px
+  right: 5px
   top: 10px
   border: 0
   background: none
   color: inherit
   z-index: 11
+  display: none
+
+  .is-show &
+    display: block
 
 .content-group
   background-size: 100%
@@ -495,3 +502,7 @@ video
 
 .speaker-link
   display: inline-block
+
+//corrigir
+#schedule .area-content
+  color: $color-dark

@@ -5,6 +5,10 @@
   display: block
   width: 100%
 
+  @include small
+    font: 2rem/1.2em $font-title
+    margin-bottom: 10px
+
   @at-root & + .text-title, .text-title_medium
     @extend .text-title
     font-size: 1.45rem
@@ -15,6 +19,9 @@
       text-transform: none
       margin: 10px 0
       opacity: .4
+
+    @include small
+      // font: .7rem/1.2rem $font-text
 
   @at-root .content
     .text-title

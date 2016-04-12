@@ -98,6 +98,9 @@ video
   color: $color-light
   font-size: 24px
 
+  @include mobile
+    font-size: 18px
+
 /**
  * AREAS
  */
@@ -126,7 +129,7 @@ video
       + .text-title
         font-size: .95em
 
-        @include small
+        @include mobile
           font-size: .8em
 
     &:before
@@ -143,18 +146,18 @@ video
     .text-title + .text-title
       font-size: 1.48em
 
-      @include medium
+      @include tablet
         font-size: 1em
 
       + .text-title
         font-size: .8em
         text-transform: uppercase
 
-  @include medium
+  @include tablet
     height: 33.33333vh
     width: 50%
 
-  @include small
+  @include mobile
     height: 150px
     width: 100%
 
@@ -257,7 +260,7 @@ video
   &:nth-child(6) .content-group
     transform-origin: 100% 100%
 
-  @include medium
+  @include tablet
 
     &:nth-child(2) .content-group
       transform-origin: 100% 0
@@ -287,7 +290,7 @@ video
   font-size: 20px
   height: 100vh
 
-  @include small
+  @include mobile
     height: auto
 
 .area-video
@@ -313,11 +316,11 @@ video
   width: 120px
   height: 90px
 
-  @include medium
+  @include tablet
     transform translate(85%, 10%)
     display: none
 
-  @include small
+  @include mobile
     transform translate(85%, 10%)
     display: none
 
@@ -330,7 +333,7 @@ video
     transform-origin: 50% 50%
     opacity: .05
 
-    @include small
+    @include mobile
       display: block
 
 .btn-area
@@ -351,8 +354,8 @@ video
 .content
   @extend %overflow-scrolling
   width: 100%
-  // height: 100%
-  // overflow-y: auto
+  height: 100%
+  overflow-y: auto
   padding: 0 80px 10px
 
   p
@@ -364,10 +367,10 @@ video
     text-align: center
     width: 100%
 
-  @include small
+  @include mobile
     padding: 10px 25px 10px 10px
 
-  @include medium
+  @include tablet
     padding: 25px
 
 
@@ -380,7 +383,7 @@ video
     color: $color-dark
 
 .btn-close
-  position: absolute
+  position: fixed
   cursor: pointer
   right: 0
   top: 15px
@@ -413,7 +416,7 @@ video
     text-align: center
     width: 100%
 
-  @include medium
+  @include tablet
     height: 33.33333vh
     width: 50%
 
@@ -425,7 +428,7 @@ video
     visibility: visible
     transition: all ease .4s
 
-    @include medium
+    @include tablet
       width: 100%
       height: 100%
 
@@ -463,7 +466,7 @@ video
   &:not(a)
     margin: 10px
 
-    @include medium
+    @include tablet
       width: 100%
       text-align: center
 
@@ -487,7 +490,7 @@ video
   display: inline-block
   margin-bottom: 10px
 
-  @include small
+  @include mobile
     display: block
     text-align: center
 
@@ -512,16 +515,16 @@ video
         padding-right: 50px
         text-align: right
 
-        @include medium
+        @include tablet
           padding-right: 0
 
 
       .speaker-photo
-        @include medium
+        @include tablet
           margin-left: 20px
 
     &:nth-child(odd) .speaker-photo
-      @include medium
+      @include tablet
         margin-right: 20px
 
 
@@ -533,13 +536,13 @@ video
   margin-bottom: 10px
   width: 200px
 
-  @include medium
+  @include tablet
     margin-right: 0
 
 .speaker-details
   width: calc(100% - 250px)
 
-  @include medium
+  @include tablet
     width: 100%
 
 .speaker-name
@@ -559,7 +562,19 @@ video
   display: inline-block
   margin: 25px 0 50px
 
+  @include mobile
+    font-size: 20px
+    margin: 0 0 15px
+
 .social-links a
   display: inline-block
   cursor: pointer
   margin: 0 10px
+
+.pre-footer,
+.extra
+  display: none
+
+  .is-normal &
+    display: block
+

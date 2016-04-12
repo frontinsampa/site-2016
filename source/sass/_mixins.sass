@@ -1,17 +1,17 @@
 @mixin media-query($media-query)
 
-  @if $media-query == medium
+  @if $media-query == tablet
     @media only screen and (max-width: $screen-sm)
       @content
 
-  @if $media-query == small
+  @if $media-query == mobile
     @media only screen and (max-width: $screen-xs)
       @content
 
-@mixin medium
-  @include media-query(medium)
+@mixin tablet
+  @include media-query(tablet)
     @content
 
-@mixin small
-  @include media-query(small)
+@mixin mobile
+  @include media-query(mobile)
     @content

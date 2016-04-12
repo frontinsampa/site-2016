@@ -143,6 +143,9 @@ video
     .text-title + .text-title
       font-size: 1.48em
 
+      @include small
+        font-size: 1em
+
       + .text-title
         font-size: .8em
         text-transform: uppercase
@@ -268,6 +271,9 @@ video
   font-size: 20px
   height: 100vh
 
+  @include small
+    height: auto
+
 .area-video
   position: absolute
   top: 0
@@ -352,7 +358,7 @@ video
 .btn-close
   position: absolute
   cursor: pointer
-  right: 5px
+  right: 0
   top: 10px
   border: 0
   background: none
@@ -481,6 +487,9 @@ video
         padding-right: 50px
         text-align: right
 
+        @include small
+          padding-right: 0
+
 
 .speaker-photo
   float: left
@@ -489,8 +498,14 @@ video
   margin-bottom: 10px
   width: 200px
 
+  @include small
+    margin-right: 0
+
 .speaker-details
   width: calc(100% - 250px)
+
+  @include small
+    width: 100%
 
 .speaker-name
   color: #000
@@ -502,7 +517,3 @@ video
 
 .speaker-link
   display: inline-block
-
-//corrigir
-#schedule .area-content
-  color: $color-dark

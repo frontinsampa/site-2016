@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^(evento|palestrantes|programacao|fale-conosco)$ index.html?p=$1 [NC,L]

@@ -58,7 +58,6 @@ body
 a
   color: inherit
   text-decoration: none
-  font-weight: bold
 
 body.is-normal
   overflow: auto
@@ -89,6 +88,7 @@ video
   @media screen and (min-width: 1081px)
     position: absolute
     z-index: 1
+    top: 0
     width: 100%
 
 .title
@@ -163,8 +163,7 @@ video
     width: 50%
 
   @include mobile
-    height: 150px
-    width: 100%
+    width: 100vw
 
     &:nth-child(1) .content-group,
     &:nth-child(2) .content-group,
@@ -173,28 +172,6 @@ video
     &:nth-child(5) .content-group,
     &:nth-child(6) .content-group
       transform-origin: 100% 100%
-
-  // &:nth-child(6)
-    // .content-group
-      // text-align: center
-      // color: inherit
-
-    // .subtitle,
-    // .title,
-    // .social-links,
-    // .contact
-    //   width: 100%
-    //   text-align: center
-    //
-    // .title,
-    // .subtitle,
-    // p
-    //   color: $color-dark
-
-
-  // &:nth-child(5)
-  //   .area-content
-  //     margin-top: 80px
 
   &:not(.is-show):before
     content: ''
@@ -243,12 +220,17 @@ video
     &.is-animation
       &:nth-child(odd),
       &:nth-child(even)
-        animation: color .5s linear .1s
+        animation: color .9s linear .1s
         animation-fill-mode: forwards
 
-      &:after
-        animation: transparency .8s linear .1s
-        animation-fill-mode: forwards
+      @for $i from 1 through 6
+        $animation-time: '.' + random(2 * $i) + s
+
+        &:nth-child(#{$i}):after
+          @debug $animation-time
+
+          animation: transparency 1s linear #{$animation-time}
+          animation-fill-mode: forwards
 
       &:before
         opacity: 0
@@ -321,33 +303,10 @@ video
   position: absolute
   transform: translate(-50%, -50%)
   left: 50%
-  // transform: scale(1) translate(-50%, 11%)
-  // transform-origin: 0 0
-  // transition: all ease-in-out .5s
-  // top: 0
   z-index: 4
-  // width: 120px
-  // height: 90px
 
-  // @include tablet
-  //   transform translate(85%, 10%)
-  //   display: none
-  //
-  // @include mobile
-  //   transform translate(85%, 10%)
-  //   display: none
-  //
-  // svg path
-  //   fill: $color-light
-  //
-  // .is-show &
-  //   transform: scale(3) translate(-25%, 75%)
-  //   transition: all ease .4s
-  //   transform-origin: 50% 50%
-  //   opacity: .05
-  //
-  //   @include mobile
-  //     display: block
+  @media screen and (max-width: 1080px)
+    display: none
 
 .btn-area
   position: absolute
@@ -590,13 +549,14 @@ video
 
 
 .schedule
-  width: 49%
+  @media screen and (min-width: $screen-lg-min)
+    width: 49%
 
-  &:nth-child(even)
-    text-align: right
+    &:nth-child(even)
+      text-align: right
 
-  &:nth-child(odd)
-    align-self: flex-end
+    &:nth-child(odd)
+      align-self: flex-end
 
   @at-root .schedule-group
     display: flex
@@ -604,6 +564,7 @@ video
 
   @at-root .schedule-time
     margin: 0
+    font-size: .8rem
 
   @at-root .schedule-title
     @extend .text-title_medium

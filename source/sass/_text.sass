@@ -25,10 +25,7 @@
 
   @at-root .content
     .text-title
-      // border-bottom: 4px solid $color-default
-      // margin-bottom: 10px
       display: block
-      // width: auto
 
       + .text-title
         border: 0
@@ -49,6 +46,22 @@
 
       + .text-title
         font-size: 1.1rem
+
+  @at-root .admin-list
+    .text-title
+      font-size: 1.1rem
+      margin-top: 10px
+      margin-bottom: 0
+
+      + .text-title
+        font: .9rem $font-text
+        text-transform: none
+        display: inline-flex
+        align-items: center
+        justify-content: center
+
+        *
+          margin: 0 5px
 
 .text-align
   &_center

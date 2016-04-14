@@ -21,7 +21,7 @@ gulp.task('sass', function() {
         .pipe(browserSync.stream())
         .pipe(gulp.dest('./build/assets/css')), {
           ignorePath: '/build',
-          relative:   false
+          relative:   true
         }
     ))
     .pipe(gulp.dest('./build'));
@@ -36,7 +36,7 @@ gulp.task('javascript', function() {
         }))
         .pipe(gulp.dest('./build/assets/js')), {
           ignorePath: '/build',
-          relative:   false
+          relative:   true
         }
     ))
     .pipe(gulp.dest('./build'));

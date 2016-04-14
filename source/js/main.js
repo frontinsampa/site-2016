@@ -5,6 +5,7 @@ fis.functions = (function() {
   'use strict';
 
   function init() {
+    navigation();
     showContent();
     hideContent();
     animation();
@@ -27,33 +28,27 @@ fis.functions = (function() {
     });
   }
 
-  function startAnimation(i){
-    $(i).removeClass('is-animation');
-      var elem = i
-      var area = $(i).index() + 1;
+  function startAnimation(element) {
+      var area = element.index() + 1;
       var nth  = [1, 2, 3, 4, 5, 6];
 
       nth.splice(nth.indexOf(area), 1);
 
-      nth.sort(function(a) {
-          return Math.random() - 0.5;
+      nth.sort(function() {
+        return Math.random() - 0.5;
       });
 
-      nth.filter(function(i) {
-        setTimeout(function() {
-          $('.is-normal .area:nth-child('+i+')').addClass('is-animation');
-          elem.removeClass('is-animation');
-        }, 100 * i);
-      }.bind(i));
+      for(var i in nth) {
+        $('.is-normal .area:nth-child('+nth[i]+')').addClass('is-animation');
+      }
   }
 
-  function stopAnimation(){
-     $('.area').removeClass('is-animation');
+  function stopAnimation() {
+    $('.is-normal .area').removeClass('is-animation');
   }
 
   function showContent() {
-    $('.btn-area:not(.link-direct)').on('click', function(e){
-      e.preventDefault();
+    $('.btn-area:not(.link-direct)').on('click', function() {
       $('body').removeClass('is-normal');
       $(this).closest('.area').addClass('is-show');
     });
@@ -61,12 +56,46 @@ fis.functions = (function() {
 
   function hideContent() {
     $('.btn-close').on('click', function(){
-
       setTimeout(function(){
         $('body').addClass('is-normal');
       },300);
+
       $(this).closest('.area').removeClass('is-show');
     });
+  }
+  /**
+   * Single Page navigation.
+   * Credits: http://zinoui.com/blog/single-page-apps-html5-pushstate
+   */
+  function navigation() {
+    $(document).on('click', 'a:not([target="_blank"])', function(event) {
+			event.preventDefault();
+
+      var title     = 'FrontInSampa 2016';
+
+			var pageUrl   = $(this).attr('href');
+			var pageTitle = title + ' | ' + $(this).attr('title');
+
+			history.pushState({
+  				url:   pageUrl,
+  				title: pageTitle
+  			},
+        pageTitle,
+        pageUrl
+      );
+
+			document.title = pageTitle;
+		});
+
+		$(window).on('popstate', function(event) {
+			var state = event.originalEvent.state;
+
+			if(state !== null) {
+				document.title = state.title;
+			} else {
+				document.title = 'FrontInSampa 2016';
+			}
+		});
   }
 
   return {

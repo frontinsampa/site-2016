@@ -130,12 +130,11 @@ video
   color: $color-light
 
   @at-root #event:not(.is-show)
-    .text-title
-      + .text-title
-        font-size: .95em
+    .text-title + .text-title
+      font-size: 1.29em
 
-        @include mobile
-          font-size: .8em
+      @include mobile
+        font-size: .8em
 
     &:before
       background: url(/assets/images/area-front-in-sampa.jpg) no-repeat
@@ -148,15 +147,15 @@ video
         color: $color-default
 
   @at-root #place
-    .text-title + .text-title
-      font-size: 1.48em
-
-      @include tablet
-        font-size: 1em
+    .text-title
+      margin-bottom: 8px
 
       + .text-title
-        font-size: .8em
-        text-transform: uppercase
+        font-size: .98em
+
+        + .text-title
+          font-size: .65em
+          text-transform: uppercase
 
   @include tablet
     height: 33.33333vh
@@ -325,11 +324,10 @@ video
   width: 100%
   height: 100%
   overflow-y: auto
-  padding: 20px
+  padding: 20px 40px 20px 20px
   display: block
 
   p
-    // color: mix(#000,$color-light, 15%)
     font-size: 1rem
 
   .note
@@ -338,30 +336,25 @@ video
     width: 100%
 
   @include mobile
-    padding: 10px 25px 10px 10px
-
-  @include tablet
-    padding: 25px
-
+    padding: 10px 35px 10px 10px
 
   @at-root .area:nth-child(odd) &
-    // background: $color-dark
     color: $color-light
 
   @at-root .area:nth-child(even) &
-    // background: $color-light
     color: $color-dark
 
 .btn-close
   position: fixed
   cursor: pointer
-  right: 0
   top: 15px
+  right: 0
   border: 0
   background: none
   color: inherit
   z-index: 11
   display: none
+  transform: translateX(-25%)
 
   .is-show &
     display: block

@@ -74,7 +74,7 @@ fis.functions = (function() {
       var title     = 'FrontInSampa 2016';
 
 			var pageUrl   = $(this).attr('href');
-			var pageTitle = title + ' | ' + $(this).attr('title');
+			var pageTitle = title + ' | ' + ($(this).attr('title') || '');
 
 			history.pushState({
   				url:   pageUrl,

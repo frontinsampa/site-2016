@@ -68,23 +68,31 @@ fis.functions = (function() {
    * Credits: http://zinoui.com/blog/single-page-apps-html5-pushstate
    */
   function navigation() {
+    $(document).ready(function() {
+      setTimeout(function() {
+        $('[href="'+ window.location.pathname +'"]').trigger('click');
+      });
+    });
+
     $(document).on('click', 'a:not([target="_blank"])', function(event) {
 			event.preventDefault();
 
-      var title     = 'FrontInSampa 2016';
+      var tt     = 'FrontInSampa 2016';
 
-			var pageUrl   = $(this).attr('href');
-			var pageTitle = title + ' | ' + ($(this).attr('title') || '');
+			var page   = $(this).attr('href');
+      var pagett = $(this).attr('title');
+
+			tt = (pagett || tt) + ' :: ' + (pagett ? tt : 'Maior evento de front-end em São Paulo');
 
 			history.pushState({
-  				url:   pageUrl,
-  				title: pageTitle
+  				url:   page,
+  				title: tt
   			},
-        pageTitle,
-        pageUrl
+        tt,
+        page
       );
 
-			document.title = pageTitle;
+			document.title = tt;
 		});
 
 		$(window).on('popstate', function(event) {

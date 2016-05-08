@@ -93,7 +93,12 @@ gulp.task('default', gulp.series(
     browserSync({
       server: {
         baseDir: './build',
-        notify: false
+        notify: false,
+        middleware: [
+          require('connect-modrewrite')([
+            '!\\.\\w+$ /index.html [L]'
+          ])
+        ]
       }
     });
 

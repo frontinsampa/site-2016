@@ -6,6 +6,7 @@ fis.functions = (function() {
 
   function init() {
     navigation();
+    video();
     showContent();
     hideContent();
     animation();
@@ -104,6 +105,12 @@ fis.functions = (function() {
 				document.title = 'FrontInSampa 2016';
 			}
 		});
+  }
+
+  function video() {
+    if(!navigator.userAgent.match(/iphone|ipad|ipod|android|phone/i)) {
+      $('main .area-container').prepend('<video muted autoplay loop><source src="./assets/images/areas-background.mp4"></video>');
+    }
   }
 
   return {

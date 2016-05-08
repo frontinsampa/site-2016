@@ -6,46 +6,34 @@ fis.functions = (function() {
 
   function init() {
     navigation();
-    video();
     showContent();
     hideContent();
-    animation();
+
+    if(!navigator.userAgent.match(/iphone|ipad|ipod|android|phone/i)) {
+      video();
+      animation();
+    }
   }
 
   function animation() {
-    $('.is-normal .area').on({
-      mouseover: function() {
-        startAnimation($(this));
-      },
-      focusin: function() {
-        startAnimation($(this));
-      },
-      focusout: function(){
-        stopAnimation();
-      },
-      mouseout: function() {
-        stopAnimation();
-      }
+    var nth = [1, 2, 3, 4, 5, 6];
+
+    nth.sort(function() {
+      return Math.random() - 0.5;
     });
-  }
 
-  function startAnimation(element) {
-      var area = element.index() + 1;
-      var nth  = [1, 2, 3, 4, 5, 6];
+    for(var i in nth) {
+      $('.is-normal .area:nth-child('+nth[i]+')').addClass('is-first-animation');
+    }
 
-      nth.splice(nth.indexOf(area), 1);
-
-      nth.sort(function() {
-        return Math.random() - 0.5;
-      });
-
-      for(var i in nth) {
-        $('.is-normal .area:nth-child('+nth[i]+')').addClass('is-animation');
-      }
-  }
-
-  function stopAnimation() {
-    $('.is-normal .area').removeClass('is-animation');
+    $('.is-normal .area').on({
+      'mouseover focusin': function() {
+        $(this).removeClass('is-animation is-first-animation');
+      },
+      'focusout mouseout': function(){
+        $(this).not('.is-show').addClass('is-animation');
+      },
+    });
   }
 
   function showContent() {
@@ -108,9 +96,7 @@ fis.functions = (function() {
   }
 
   function video() {
-    if(!navigator.userAgent.match(/iphone|ipad|ipod|android|phone/i)) {
-      $('main .area-container').prepend('<video muted autoplay loop><source src="./assets/images/areas-background.mp4"></video>');
-    }
+    $('main .area-container').prepend('<video muted autoplay loop><source src="./assets/images/areas-background.mp4"></video>');
   }
 
   return {

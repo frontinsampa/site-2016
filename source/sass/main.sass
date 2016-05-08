@@ -82,14 +82,17 @@ h6
   color: $color-dark
 
 video
-  @media screen and (max-width: 1080px)
+  @media screen and #{$screen-sm-max}
     display: none
 
-  @media screen and (min-width: 1081px)
+  @media screen and #{$screen-lg-min}
     position: absolute
     z-index: 1
     top: 0
-    width: 100%
+    min-width: 100%
+    min-height: 100%
+    width: auto
+    height: auto
 
 .title
   // color: $color-light
@@ -172,18 +175,19 @@ video
     &:nth-child(6) .content-group
       transform-origin: 100% 100%
 
-  &:not(.is-show):before
-    content: ''
-    position: absolute
-    width: 100%
-    height: 100%
-    top: 0
-    left: 0
-    background: url(http://s3.amazonaws.com/agile_designer_uploads/images/145/large.jpg?1374128699) no-repeat
-    background-size: cover
-    opacity: .2
-    z-index: 3
-    transition: opacity .5s ease
+  @media screen and #{$screen-lg-min}
+    &:not(.is-show):before
+      content: ''
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      opacity: .2
+      z-index: 3
+      transition: opacity .5s ease
+      background: url(http://s3.amazonaws.com/agile_designer_uploads/images/145/large.jpg?1374128699) no-repeat
+      background-size: cover
 
   &:after
     content: ''
@@ -215,24 +219,30 @@ video
     .btn-area
       display: none
 
-  @media screen and (min-width: 1081px)
+  @media screen and #{$screen-lg-min}
     &.is-animation
-      &:nth-child(odd),
-      &:nth-child(even)
-        animation: color .9s linear .1s
+      animation: color .4s linear .1s
+      animation-fill-mode: forwards
+
+      &:after
+        animation: transparency .5s linear .1s
         animation-fill-mode: forwards
-
-      @for $i from 1 through 6
-        $animation-time: '.' + random(2 * $i) + s
-
-        &:nth-child(#{$i}):after
-          @debug $animation-time
-
-          animation: transparency 1s linear #{$animation-time}
-          animation-fill-mode: forwards
 
       &:before
         opacity: 0
+
+    &.is-first-animation
+      animation: color .9s linear .1s
+      animation-fill-mode: forwards
+
+      @for $i from 1 through 6
+        $animation-time: '.' + random(5 * $i) + 's'
+
+        &:nth-child(#{$i}):after
+          @debug #{$animation-time}
+
+          animation: transparency 1s linear #{$animation-time}
+          animation-fill-mode: forwards
 
   &:nth-child(1) .content-group
     transform-origin: 100% 300%
@@ -539,7 +549,7 @@ video
 
 
 .schedule
-  @media screen and (min-width: $screen-lg-min)
+  @media screen and #{$screen-lg-min}
     width: 49%
 
     &:nth-child(even)

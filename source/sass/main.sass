@@ -235,6 +235,9 @@ video
       animation: color .9s linear .1s
       animation-fill-mode: forwards
 
+      &:before
+        opacity: 0
+
       @for $i from 1 through 6
         $animation-time: '.' + random(5 * $i) + 's'
 
@@ -287,6 +290,15 @@ video
   width: 100%
   position: relative
   overflow: hidden
+
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    pointer-events: none
+    background: url(../images/area-container-overlay.png) repeat
+    z-index: 2
 
 .area-group
   width: 100%
